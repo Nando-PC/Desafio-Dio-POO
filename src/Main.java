@@ -1,6 +1,4 @@
-import br.com.dio.desafio.dominio.Conteudo;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -26,9 +24,45 @@ public class Main {
         //Conteudo conteudo1 = new Curso();
         //Conteudo conteudo2 = new Mentoria();
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria1);
+        //System.out.println(curso1);
+        //System.out.println(curso2);
+        //System.out.println(mentoria1);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição do bootcamp");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria1);
+
+        Dev devNando = new Dev();
+        devNando.setNome("Nando");
+        devNando.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos - Nando: "+devNando.getConteudosInscritos());
+        devNando.progredir();
+        devNando.progredir();
+        System.out.println("-");
+        System.out.println("Conteudos inscritos - Nando: "+devNando.getConteudosInscritos());
+        System.out.println("Conteudos Concluidos - Nando: "+devNando.getConteudosConcluidos());
+        System.out.println("XP:"+devNando.calcularTotalXp());
+
+        System.out.println("------------");
+
+        Dev devCamila = new Dev();
+        devCamila.setNome("Camila");
+        devCamila.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos - Camila: "+devCamila.getConteudosInscritos());
+        devCamila.progredir();
+        devCamila.progredir();
+        devCamila.progredir();
+        System.out.println("-");
+        System.out.println("Conteudos inscritos - Camila: "+ devCamila.getConteudosInscritos());
+        System.out.println("Conteudos Concluidos - Camila: "+devCamila.getConteudosConcluidos());
+        System.out.println("XP:"+devCamila.calcularTotalXp());
+
+
+
+
 
     }
 }
