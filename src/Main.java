@@ -1,3 +1,4 @@
+import br.com.dio.desafio.dominio.Conteudo;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Mentoria;
 
@@ -20,6 +21,10 @@ public class Main {
         mentoria1.setTitulo("mentoria de Java");
         mentoria1.setDescricao("mentoria sobre o Java");
         mentoria1.setData(LocalDate.now());
+
+        //Polimorfismo //instanciando objeto-filho a partir da classe mãe
+        //Conteudo conteudo1 = new Curso();
+        //Conteudo conteudo2 = new Mentoria();
 
         System.out.println(curso1);
         System.out.println(curso2);
